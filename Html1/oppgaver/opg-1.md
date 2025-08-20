@@ -37,6 +37,7 @@
 **Krav:**
 
 * 1× h1, minst 3× h2 (se, gjøre, hvorfor), 3× p, 2× img, 2× a
+* Lenkene skal være KLIKKBARE BILDER
 * Minst 2× h3 (konkrete steder/aktiviteter)
 
 ### 7. Skolens kantine 🍔
