@@ -5,7 +5,6 @@
 **Krav:**
 
 * 1× h1, 1× h2, 1× p, 1× img
-* Minst 1× h3 under en h2
 
 ### 2. Reiseguide til en norsk by ✈️
 
@@ -18,7 +17,6 @@
 **Krav:**
 
 * 1× h1, 2× h2 (f.eks. regler, kjente spillere), 2× p, 1× img, 1× a
-* Minst 1× h3 (en konkret regel/lag)
 
 ### 4. Min favorittfilm 🎬
 
