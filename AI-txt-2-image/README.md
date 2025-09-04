@@ -13,6 +13,7 @@
 1. Lag en ny notebook på google colab.
 2. Last ned notebook i denne mappa.
 3. Åpne notebook `comfyui_mwe_to_students.ipynb` i google colab.
-4. Kjør en og en celle.
-5. I cella med ngrok, bytt ut KEY med din egen API-key.
-6. Når alle cellene er kjørt, åpner du til slutt URLen du får fra cella til ngrok.
+4. Velg runtime øverst til høyre, og velg `T4 GPU`.
+5. Kjør en og en celle.
+6. I cella med ngrok, bytt ut KEY med din egen API-key.
+7. Når alle cellene er kjørt, åpner du til slutt URLen du får fra cella til ngrok.
