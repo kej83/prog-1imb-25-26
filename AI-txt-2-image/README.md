@@ -1,0 +1,18 @@
+# Kom igang med bildegenerering
+
+## Google colab
+
+### Oppsett
+1. Gå til [google colab](https://colab.google/)
+2. Lag bruker eller sign inn med google.
+3. Gå til [ngrok](https://ngrok.com/)
+4. Lag bruker på ngrok og logg inn.
+5. Finn din API-key på ngrok og ta vare på den.
+
+### Colab notebook
+1. Lag en ny notebook på google colab.
+2. Last ned notebook i denne mappa.
+3. Åpne notebook `comfyui_mwe_to_students.ipynb` i google colab.
+4. Kjør en og en celle.
+5. I cella med ngrok, bytt ut KEY med din egen API-key.
+6. Når alle cellene er kjørt, åpner du til slutt URLen du får fra cella til ngrok.
