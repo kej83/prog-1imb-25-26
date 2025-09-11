@@ -27,3 +27,8 @@
 2. Se hvordan du kan strukturere prompts. Forsøk forskjellige stiler, kameraer, vinkler, fotografer osv.
 
 *NB*: Ikke all bildemodeller kjenner alle fotografer osv. Bare å prøve seg frem. 
+
+*Generell prompt setup*:
+(Få gjerne hjelp av chatgpt å lage prompts i dette formatet:)
+
+[STYLE OF PHOTO] photo of a [SUBJECT], [IMPORTANT FEATURE], [MORE DETAILS], [POSE OR ACTION], [FRAMING], [SETTING/BACKGROUND], [LIGHTING], [CAMERA ANGLE], [CAMERA PROPERTIES],in style of [PHOTOGRAPHER],
