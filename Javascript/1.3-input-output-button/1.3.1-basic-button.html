@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basic input output</h1>
+
+    <!-- <p>Hva heter du?</p> -->
+    <!-- <input type="text" id="inpNavn"> -->
+    <p>Fornavn:</p>
+    <input type="text" id="inpFornavn">
+    <p>Etternavn:</p>
+    <input type="text" id="inpEtternavn">
+    <button onclick="lagHilsenFulltnavn()">Lag hilsen</button>
+    <!-- <button onclick="lagHilsen()">Lag hilsen</button> -->
+    <p id="txtUt"></p>
+
+    <script>
+        function lagHilsenFulltnavn() {
+            // SKRIV BARE KODE HER!!!!
+            // 1. LES inn fornavn og etternavn og lagre i variabler
+            let fornavn = ... 
+            let etternavn = ... 
+            // 2. lag hilsen med fullt navn både fornavn og etternavn
+            let hilsen = ... 
+            // 3. skriv ut i txtUt elementet!!!
+        }
+
+        function lagHilsen() {
+            // Dette skal skje når knappen trykkes
+            // 1. lagre navnet i variabel
+            let navn = document.getElementById("inpNavn").value;
+            // 2. lag hilsen
+            let hilsen = "hei, " + navn + " og velkommen!";
+            // 3. skriv ut hilsen i p-elementet
+            document.getElementById("txtUt").textContent = hilsen;
+        }
+    </script>
+</body>
+</html>

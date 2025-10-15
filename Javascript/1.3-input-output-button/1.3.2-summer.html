@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Summer</h1>
+    <input type="number" id="inpTallA"><br>
+    <input type="number" id="inpTallB"><br>
+    <button onclick="summer()">Legg sammen</button><br>
+    <p id="txtUt"></p>
+
+    <script>
+        function summer() {
+            // 1. Les inn tallene. value er innholdet i boksen
+            let tallA = Number(inpTallA.value);
+            let tallB = Number(inpTallB.value);
+            // 2. gjør beregning og lagre i variabel summen
+            let summen = tallA + tallB;
+            // 3. skriv ut resultatet
+            txtUt.textContent = summen;
+        }
+        let inpTallA = document.getElementById("inpTallA");
+        let inpTallB = document.getElementById("inpTallB");
+        let txtUt = document.getElementById("txtUt");
+
+    </script>
+</body>
+
+</html>

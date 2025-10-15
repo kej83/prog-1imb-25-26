@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gjør om til sekunder</h1>
+
+    <label for="inpTimer">Timer:</label>
+    <input type="number" id="inpTimer"><br>
+    <label for="inpMinutter">Minutter:</label>
+    <input type="number" id="inpMinutter"><br>
+
+    <button onclick="tilSek()">Gjør om til sekunder</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function tilSek(){
+            // 1. les inn timer og minutter
+            let timer = document.getElementById("inpTimer").value;
+            let minutter = document.getElementById("inpMinutter").value;
+            // 2. regn om til sekunder. 1min = 60sek. 1t = 3600sek.
+            let sekunder = timer * 3600 + minutter * 60;
+            // 3. lag svarsetning
+            // 2 timer og 10 minutter er 7800 sekunder.
+            // klønete måte:
+            // let txt = timer + " timer og " + minutter + " minutter er "+ sekunder + " sekunder."; 
+            // Bedre måte:
+            let txt = `${timer} timer og ${minutter} minutter er ${sekunder} sekunder.`;
+
+            document.getElementById("txtUt").textContent = txt;
+        }
+    </script>
+</body>
+</html>
