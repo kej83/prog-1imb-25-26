@@ -19,8 +19,8 @@
     <script>
         function tilSek(){
             // 1. les inn timer og minutter
-            let timer = document.getElementById("inpTimer").value;
-            let minutter = document.getElementById("inpMinutter").value;
+            let timer = Number(document.getElementById("inpTimer").value);
+            let minutter = Number(document.getElementById("inpMinutter").value);
             // 2. regn om til sekunder. 1min = 60sek. 1t = 3600sek.
             let sekunder = timer * 3600 + minutter * 60;
             // 3. lag svarsetning
