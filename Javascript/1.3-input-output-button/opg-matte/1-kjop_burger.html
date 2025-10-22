@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <!-- FULLFØR JAVASCRIPT-KODEN -->
+    <h1>Burgershop</h1>
+    <p>Vår prisliste</p>
+    <ul>
+        <li>Burger: 75 kr</li>
+        <li>Coca: 38 kr</li>
+    </ul>
+    <label for="inpBurger">Antall burgere:</label>
+    <input type="number" id="inpBurger">
+    <label for="inpCoca">Antall coca:</label>
+    <input type="number" id="inpCoca">
+
+    <button onclick="beregnPris()">Beregn totalpris</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function beregnPris() {
+            // 1. Les inn antall burgere og coca
+            let burgere = Number(document.getElementById("inpBurger").value);
+            // 2. regn ut totalpris
+
+            // 3. skriv ut kvittering med antall burgere, coca og totalpris.
+        }
+    </script>
+</body>
+</html>
