@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rabatt</h1>
+    <p>Brukeren oppgir ordinær pris og prosent rabatt. Så skal han få vite ny pris, og rabatten i kroner.</p>
+
+    <label for="inpPris">Oppgi ordinær pris:</label>
+    <input type="number" id="inpPris">
+
+    <label for="inpProsent">Oppgi prosent rabatt (f.eks. 33):</label>
+    <input type="number" id="inpProsent">
+
+    <button onclick="beregnRabatt()">Beregn ny pris</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function beregnRabatt(){
+            // 1. les inn pris og rabatt i prosent
+            let pris = Number(document.getElementById("inpPris").value);
+            let rabatt = Number(document.getElementById("inpProsent").value);
+
+            // 2. beregn rabatt i kr, og ny pris. 
+            let rabattKr = pris * rabatt / 100;
+            let nyPris =  pris - rabattKr;
+            // 3. lag en melding, og vis den frem.
+            let txt = `Ordinær pris: ${pris} kr.
+            Rabatt: ${rabattKr} kr.
+            Ny pris: ${nyPris} kr.`;
+
+            document.getElementById("txtUt").textContent = txt;
+        }
+    </script>
+</body>
+</html>
