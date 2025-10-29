@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ett terningkast</h1>
+    <button onclick="kast()">Kast</button>
+    <h2></h2>
+
+
+    <script>
+        function kast() {
+            // Math.random() -> tilfeldig tall mellom 0 og 1, f.eks. 0.234346431234
+            // Math.floor() -> runder ned til nærmeste heltall
+            // Math.ceil() -> runder opp til nærmeste heltall
+            let kastet = Math.ceil(Math.random() * 6);
+            let txt = `Du fikk en ${kastet}-er.`;
+            // Finner første h2-element
+            document.querySelector("h2").textContent = txt;
+        }
+
+    </script>
+</body>
+
+</html>

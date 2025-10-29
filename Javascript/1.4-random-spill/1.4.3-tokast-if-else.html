@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ett terningkast og if-setning</h1>
+    <button onclick="kast()">Kast</button>
+    <h2></h2>
+
+
+    <script>
+        function kast() {
+            let kast1 = Math.ceil(Math.random() * 6);
+            let kast2 = Math.ceil(Math.random() * 6);
+            let txt = `Du fikk ${kast1} og ${kast2}. `;
+
+
+            // Hvis summen er høyere enn 10, skriv hurra, ELLERS
+            // skriv du tapte.
+            let summen = kast1 + kast2;
+            if (summen > 10) {
+                txt += "Hurra!";
+            } else {  // summen var høyst 10 (10 el. mindre)
+                txt += "Du tapte, bro!";
+            }
+            // Finner første h2-element
+            document.querySelector("h2").textContent = txt;
+        }
+        // Oppgave: Lag en nettside der du kaster to terninger.
+        // Skriv ut hva begge terningene viser, og skriv ut i tillegg
+        // "Supert! To like!", dersom terningene var like (f.eks. to 3-ere). ELLERS skriv ut "EWW! to ulike"
+    </script>
+</body>
+
+</html>
