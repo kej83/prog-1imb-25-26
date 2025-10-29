@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alder</h1>
+    <p>Nettsiden lager tilfeldig alder mellom 0 og 100. Vi bruker if, else if og else til å bestemme om det er barn, tenåring, voksen eller pensjonist.</p>
+
+    <h2></h2>
+
+    <script>
+        // 1. lag tilfeldig alder 0-100
+        let alder = Math.floor(Math.random() * 101);
+        let txt = `Jens er ${alder} år gammel. `;
+        // 2. finn ut om alderen tilsvarer barn, tenåring, voksen eller pensjonist.
+        if (alder < 13) {
+            txt += "Jens er barn.";
+        } else if (alder < 18 ) {
+            txt += "Jens er tenåring.";
+        } else if (alder < 67) {
+            txt += "Jens er voksen.";
+        } else {
+            txt += "Jens er pensjonist.";
+        }
+
+        document.querySelector("h2").textContent = txt;
+        // OPPGAVE:
+        // Lag tilfeldig karaktersnitt (1.00 - 6.00). Avrund til 2 desimaler. IKKE bruk ceil eller floor. SØK og finn ut hvordan å runde av til 2 desimaler i javascript. 
+        // SKRIV ut snittet! i tillegg en av disse meldingene avhengig av karaktersnittet.
+        // snitt høyere enn 5.5: helt konge!
+        // snitt mellom 4.5 og 5.5: meget sterkt!
+        // snitt mellom 3.5 og 4.5: middels
+        // snitt mellom 2.5 og 3.5: lavt
+        // snitt mellom 2.0 og 2.5: veldig lavt
+        // snitt mellom 1.0 og 2.0: du strøk
+    </script>
+</body>
+</html>
