@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Straffespark</h1>
+    <p>Arne skyter straffe. Han treffer med 70 % sannsynlighet.</p>
+    <button onclick="sparkTo()">Spark to ganger</button>
+    <h2></h2>
+
+    <script>
+        function sparkTo(){
+            let tall1 = Math.random();
+            let tall2 = Math.random();
+            // Boolske variabler: er enten true eller false
+            let treff1 = tall1 < 0.70;
+            let treff2 = tall2 < 0.70;
+
+            let antallTreff = 0;
+            // Antall treff
+            if(treff1) {
+                antallTreff++;
+            }
+            if(treff2) {
+                antallTreff++;
+            }
+            let txt = `Du skårte ${antallTreff} av 2 mulige.`;
+            document.querySelector("h2").textContent = txt;
+            // Oppgave 1:
+            // Utvid slik at utskriften viser hvilket skudd som var treff og hvilket skudd som var bom.
+            // Eksempelutskrift:
+            // Skudd 1: bom
+            // Skudd 2: treff
+            // Du skårte 1 av 2 mulige.
+
+            // Oppgave 2:
+            // Utvid til 3 skudd totalt.
+    
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lag et barn</h1>
+    <button onclick="lagBarn()">Fød barn nå!</button>
+    <!-- 51,4 % av fødsler gir gutt -->
+     <h2>Det ble gutt og jente.</h2>
+
+    <script>
+        // Oppgave:
+        // utvid til tvillingfødsel. 
+        // utskriften skal være f.eks. "du fikk gutt og gutt" eller "du fikk jente og gutt"
+
+        function lagBarn() {
+            let tall1 = Math.random();
+            let tall2 = Math.random();
+            let barn1 = "jente";
+            let barn2 = "jente";
+            // Gutt 51,4% sannsynlighet
+            // 1.barnet
+            if (tall1 <= 0.514) {
+                barn1 = "gutt";
+            } 
+            // 2.barnet
+            if (tall2 <= 0.514) {
+                barn2 = "gutt";
+            }
+            let txt = `Du fikk ${barn1} og ${barn2}.`;
+            // Skriv ut txt på nettsiden
+            document.querySelector("h2").textContent = txt;
+        }
+    </script> 
+</body>
+</html>
