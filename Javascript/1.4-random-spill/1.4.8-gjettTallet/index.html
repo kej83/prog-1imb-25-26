@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gjett tallet!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Gjett tallet 🎯</h1>
+      <p>Jeg tenker på et tall fra <strong>1 til 100</strong>. Klarer du å gjette det?</p>
+    </header>
+
+    <main>
+      <div class="input-row">
+        <input type="number" id="inpTall" placeholder="Skriv et tall..." min="1" max="100" />
+        <button id="btnGjett">Gjett</button>
+      </div>
+      <p id="melding" class="melding">Skriv inn et tall og trykk "Gjett".</p>
+      <p id="forsok" class="forsok">Forsøk: 0</p>
+    </main>
+
+    <footer>
+      <small>Tips: Tenk logisk – er tallet høyere eller lavere?</small>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
