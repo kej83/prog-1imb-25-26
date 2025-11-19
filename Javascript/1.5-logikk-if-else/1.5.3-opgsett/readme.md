@@ -15,7 +15,8 @@
 <body>
     <h1>Lommetyv-alarm</h1>
     <p>Trykk på knappen for å simulere sensoravlesninger og sjekke om alarmen går av.</p>
-    <p>Alarmen skal utløses **HVIS** Bevegelse er større enn 0.5 **OG** Lys er mindre enn 0.3.</p>
+    <p>Alarmen skal utløses **HVIS** Bevegelse er større enn 0.5 **OG** Lys er mindre enn 0.3.
+    </p>
     
     <button onclick="sjekkAlarm()">Simuler Sjekk</button>
     
