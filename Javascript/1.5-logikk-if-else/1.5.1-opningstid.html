@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Åpningstid-simulering</h1>
+    <h2>Butikken er åpen kl. 11 -> kl. 19</h2>
+    <button onclick="sjekk()">Sjekk om åpent</button>
+    <p></p>
+
+    <script>
+        function sjekk() {
+            // 1. lag tilfeldig tid kl. 00 til kl. 23
+            // 0, 1, 2, 3, 4, ..., 23
+            let time = Math.floor(Math.random() * 24);
+            // 2. Sjekk mot butikkens åpningstid
+            // 11-19
+            let txtUt = document.querySelector("p");
+
+            if (time >= 11 && time < 19) {
+                txtUt.textContent = `Kl. er ${time}. Åpent!`;
+            } else {
+                txtUt.textContent = `Kl. er ${time}. Stengt!`;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
