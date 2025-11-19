@@ -1,6 +1,11 @@
 # 🧠 Prøve MED LØSNING – HTML & JavaScript
-
 *(variabler, random, if/else, button, input)*
+
+## POENG:
+* 1p per riktig svar på del 1
+* 2p per riktig svar på del 2
+* 5p for riktig svar på del 3
+
 
 ---
 
