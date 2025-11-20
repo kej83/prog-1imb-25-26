@@ -1,14 +1,4 @@
-Her kommer **10 forslag til oppgaver** som alle bruker **HTML-skjema + JavaScript** med:
-
-* `input type="text"`
-* `input type="number"`
-* `input type="password"`
-* `input type="checkbox"`
-* `select` (drop-down)
-
-Alle oppgavene skal løses med **if-else** og **logiske uttrykk** i JavaScript.
-
----
+# Opg-sett 2
 
 ## 1. Brukernavn-sjekk (text)
 
