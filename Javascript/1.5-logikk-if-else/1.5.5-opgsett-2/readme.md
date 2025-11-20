@@ -226,7 +226,7 @@ Regler (du bestemmer, f.eks.):
 * `#generelt` er åpen for alle roller.
 * Alle andre kanalnavn → `"Kanal finnes ikke"`.
 
-Her må eleven kombinere:
+Her må du kombinere:
 
 * Sammenligning av `text`-verdi
 * Rolle med `select`
