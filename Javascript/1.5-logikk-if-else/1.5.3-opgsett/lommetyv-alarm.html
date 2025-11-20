@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 1: Lommetyv-alarm</title>
+</head>
+<body>
+    <h1>Lommetyv-alarm</h1>
+    <p>Trykk på knappen for å simulere sensoravlesninger og sjekke om alarmen går av.</p>
+    <p>Alarmen skal utløses **HVIS** Bevegelse er større enn 0.5 **OG** Lys er mindre enn 0.3.
+    </p>
+    
+    <button onclick="sjekkAlarm()">Simuler Sjekk</button>
+    
+    <h3>Sensorverdier (0.00 til 1.00):</h3>
+    <p id="verdier">Lys: - | Bevegelse: -</p>
+    
+    <h3>Alarmstatus:</h3>
+    <p id="status">Ventet på sjekk...</p>
+
+    <script>
+        function sjekkAlarm() {
+            // 1. ELEV OPPGAVE: Generer tilfeldige verdier mellom 0 og 1 for lys og bevegelse (Math.random())
+            let lys = Math.random(); 
+            let bevegelse = Math.random();
+            
+            let verdiUt = document.getElementById("verdier");
+            let statusUt = document.getElementById("status");
+
+            // ELEV OPPGAVE: Vis de genererte verdiene her (juster hvis du endrer variabelnavn)
+            verdiUt.textContent = `Lys: ${lys.toFixed(2)} | Bevegelse: ${bevegelse.toFixed(2)}`;
+
+            // 2. ELEV OPPGAVE: SKRIV LOGIKKEN HER!
+            // Bruk IF-setning og den logiske operatoren && (AND).
+            // Alarmen skal utløses **HVIS** Bevegelse er større enn 0.5 **OG** Lys er mindre enn 0.3.
+            if (bevegelse > 0.5 && lys < 0.3) {
+                statusUt.textContent = "ALARM!";
+            } else{
+                statusUt.textContent = "Alt bra, rolig. Ingen tyv.";
+            }
+
+        }
+    </script>
+</body>
+</html>
