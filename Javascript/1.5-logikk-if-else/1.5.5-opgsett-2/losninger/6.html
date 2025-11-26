@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rabatt i nettbutikk</h1>
+
+    <label for="inpTotalpris">Totalpris:</label>
+    <input type="number" id="inpTotalpris"><br>
+    <label for="chkStudent">Er student
+        <input type="checkbox" id="chkStudent">
+    </label>
+<br>
+<label for="selMedlem">Medlemsnivå:</label>
+    <select id="selMedlem">
+        <option value="ingen">Ingen</option>
+        <option value="bronse">Bronse</option>
+        <option value="solv">Sølv</option>
+        <option value="gull">Gull</option>
+    </select>
+
+    <button onclick="beregnRabatt()">Beregn rabatt</button>
+    <p></p>
+
+    <script>
+        function beregnRabatt() {
+            // 1. inndata
+            let pris = Number(document.getElementById("inpTotalpris").value);
+            // erStudent er boolean, checked gir true hvis haket av!
+            let erStudent = document.getElementById("chkStudent").checked;
+            let medlemsniva = document.getElementById("selMedlem").value;
+
+            // 2. Bestem rabatten
+            let rabatt = 0;
+            
+            if (erStudent) {
+                rabatt += 10;
+
+            }
+            
+            if (medlemsniva === "bronse") {
+                rabatt += 5;
+            } else if (medlemsniva === "solv") {
+                rabatt += 10;
+            } else if(medlemsniva === "gull" ){
+                rabatt += 15;
+            } 
+
+            // Regne ut rabatt i kr, og ny pris
+            let rabattKr = pris * rabatt / 100;
+            let nypris = pris - rabattKr;
+
+            let txt = `Opprinnelig pris: ${pris} kr. Du får ${rabatt} % i rabatt. Den nye prisen er ${nypris} kr.`;
+
+            document.querySelector("p").textContent = txt;
+        }
+
+    </script>
+
+</body>
+</html>

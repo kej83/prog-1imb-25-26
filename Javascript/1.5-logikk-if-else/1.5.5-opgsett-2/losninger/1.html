@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Brukernavn</h1>
+
+    <input type="text" id="inpBrukernavn">
+
+    <button onclick="sjekkBrukernavn()">Sjekk brukernavn</button>
+    
+    <p></p>
+
+    <script>
+        function sjekkBrukernavn(){
+            // 1. lese inn fra input-feltet
+            let user = document.getElementById("inpBrukernavn").value; 
+            // 2. sjekk regler
+            let txt;
+            if (user.length < 3) {
+                txt = "Brukernavnet er for kort";
+            } 
+            // != betyr IKKE LIK
+            // trim() fjerner tomrom (blank space)
+            // f.eks. " arne per ".trim() gir "arneper"
+
+            // Alternativt: user.trim() != user
+            // user.includes(" ")
+            else if(user.includes(" ")) {
+                txt = "Brukernavnet kan IKKE inneholde mellomrom, prøv igjen.";
+            } else {
+                txt = "Brukernavnet er godkjent!"
+            }
+
+            document.querySelector("p").textContent = txt;
+        }
+    </script>
+
+</body>
+</html>
