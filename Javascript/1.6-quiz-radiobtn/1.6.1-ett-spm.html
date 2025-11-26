@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Flervalgsquiz</h1>
+
+    <h2>Spørsmål 1</h2>
+    <p>Hva heter det høyeste fjellet på dovrefjell?</p>
+<!-- samme name kobler radioknapper sammen! -->
+   <input type="radio" name="fjell" value="snohetta" id="snohetta">
+   <label for="snohetta">Snøhetta</label><br>
+    <input type="radio" name="fjell" value="galdhopiggen" id="galdhopiggen">
+   <label for="galdhopiggen">Galdhøpiggen</label><br>
+   <input type="radio" name="fjell" value="glittertind" id="glittertind">
+   <label for="glittertind">Glittertind</label><br>
+
+   <button onclick="sjekkSvar()">Sjekk svar</button>
+   <p id="txtUt"></p>
+
+   <script>
+    function sjekkSvar() {
+        let valgtFjell = document.querySelector("input[name='fjell']:checked").value;
+        
+        if (valgtFjell == fasit1) {
+            document.getElementById("txtUt").textContent = "Riktig!";
+        } else {
+            document.getElementById("txtUt").textContent = "Feil!";
+        }
+
+    }
+    
+    let fasit1 = "snohetta";
+   </script>
+</body>
+</html>

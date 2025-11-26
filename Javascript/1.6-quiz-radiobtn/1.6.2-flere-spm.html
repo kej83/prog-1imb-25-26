@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Flervalgsquiz</h1>
+
+    <h2>Spørsmål 1</h2>
+    <p>Hva heter det høyeste fjellet på dovrefjell?</p>
+<!-- samme name kobler radioknapper sammen! -->
+   <input type="radio" name="fjell" value="snohetta" id="snohetta">
+   <label for="snohetta">Snøhetta</label><br>
+    <input type="radio" name="fjell" value="galdhopiggen" id="galdhopiggen">
+   <label for="galdhopiggen">Galdhøpiggen</label><br>
+   <input type="radio" name="fjell" value="glittertind" id="glittertind">
+   <label for="glittertind">Glittertind</label><br>
+
+   <h2>Spørsmål 1</h2>
+    <p>Hva heter den største elva i Finnmark?</p>
+<!-- samme name kobler radioknapper sammen! -->
+   <input type="radio" name="elv" value="lakselv" id="lakselv">
+   <label for="lakselv">Lakselv</label><br>
+
+    <input type="radio" name="elv" value="tana" id="tana">
+   <label for="tana">Tana</label><br>
+
+   <input type="radio" name="elv" value="stabburselva" id="stabburselva">
+   <label for="stabburselva">Stabburselva</label><br>
+
+   <!-- TODO: 
+    LEGG TIL 3 spørsmål! -->
+
+   <button onclick="sjekkSvar()">Sjekk svar</button>
+   <p id="txtUt"></p>
+
+   <script>
+    function sjekkSvar() {
+        let poeng = 0;
+
+        let svar1 = document.querySelector("input[name='fjell']:checked").value;
+        let svar2 = document.querySelector("input[name='elv']:checked").value;
+        // Hente svar fra spm 3-5.
+
+        if (svar1 == fasit1) {
+            // Øk poeng med 1
+        } 
+        if (svar2 == fasit2) {
+            // Øk poeng med 1
+        }
+
+        // TODO: Skriv en samlet melding med antall poeng. Skriv 3 ulike meldinger. 5 poeng gir hurra, 3 eller 4 poeng gir greit nok, ellers dårlig.
+    }
+    
+    let fasit1 = "snohetta";
+    let fasit2 = "tana";
+    // TODO fasit til spm 3-5.
+   </script>
+</body>
+</html>
