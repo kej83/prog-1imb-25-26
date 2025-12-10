@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Space-launch</h1>
+    <p>Teller ned fra 10. Sier til slutt "LAUNCH!"</p>
+    <button onclick="launch()">Tell ned!</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function launch() {
+            let seconds = 10;
+            let txt = "Countdown to launch...";
+
+            while (seconds > 0) {
+                txt += `<br>${seconds} seconds to launch...`;
+                seconds--;
+            }
+            // ...
+            txt += `<br>LAUNCH!!!`;
+
+            document.getElementById("txtUt").innerHTML = txt;
+        }
+    </script>
+</body>
+
+</html>

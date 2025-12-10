@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Løkker</h1>
+    <h2>Trykk på knappen for å hilse på deg selv 100 ganger</h2>
+    <button onclick="hilse100()">Hilse 100</button>
+    <p></p>
+
+    <script>
+        function hilse100(){
+            let txt = "Hei på deg";
+            let i = 1;
+            while (i < 100) {
+                txt += "<br>Hei på deg";
+                // ENDRING: vi øker i med 1
+                // i++; er det samme som i = i + 1;
+                i++;  
+            }
+            document.querySelector("p").innerHTML = txt;
+        }
+        
+        
+    </script>
+</body>
+</html>
