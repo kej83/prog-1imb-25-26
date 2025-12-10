@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mange venner</h1>
+    <p>Får spørsmål om navn på venn helt til du skriver END eller FERDIG. Skriver så ut navnene.</p>
+    <p id="txtUt"></p>
+
+    <script>
+        let txt = "<h2>Mine venner</h2>";
+        let navn = prompt("Oppgi et navn: (END eller FERDIG for å avslutte:)")
+        // Fortsett så lenge:
+        // navn IKKE er END eller FERDIG
+        // ! omvendt sannhet (true blir false, eller false blir true)
+        // alternativt logisk uttrykk:
+        // navn != "END" && navn != "FERDIG"
+
+        while ( !(navn === "END" || navn === "FERDIG") ) {
+            txt += `<p>${navn}</p>`;
+            navn = prompt("Oppgi et navn: (END eller FERDIG for å avslutte:)");
+        }
+        
+        document.getElementById("txtUt").innerHTML = txt;
+
+    </script>
+</body>
+</html>
