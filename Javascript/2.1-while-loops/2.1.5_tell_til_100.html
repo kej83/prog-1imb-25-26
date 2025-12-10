@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tell til 100</h1>
+    <p>Programmet skal telle til 100 og presentere restultatet på formen:</p>
+    <p>1, 2, 3, ..., 99, 100</p>
+    <button onclick="tellHundre()">Tell til 100</button>
+
+    <p id="txtUt"></p>
+
+    <script>
+        function tellHundre() {
+            let tall = 1;
+            let txt = `${tall}, `;
+            tall++;
+            txt += `${tall}, `;
+            tall++;
+            txt += `${tall}, `;
+            // TODO: bruk while-løkke
+        }
+    </script>
+</body>
+</html>
