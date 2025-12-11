@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hei 50 ganger</h1>
+    <p></p>
+
+    <script>
+        let txt = "<h2>Mine 50 hei</h2>";
+        // while
+        // let i = 0;
+        // while(i < 50 ) {
+        //     txt += `<p>Hei for ${i+1}-te gang.</p>`;
+        //     i++;
+        // }
+        // for
+        for (let i = 0; i < 50; i++) {
+             txt += `<p>Hei for ${i+1}-te gang.</p>`;
+        }
+        
+        document.querySelector("p").innerHTML = txt;
+    </script>
+</body>
+</html>

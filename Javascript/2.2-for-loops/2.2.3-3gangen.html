@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>3-gangen.</h1>
+    <div id="innhold"></div>
+
+    <script>
+        let innhold = document.getElementById("innhold");
+
+        let txt = "";
+        // 3 * 1 = 3
+        // 3 * 2 = 6
+        // 3 * 3 = 9
+        // ...
+        for (let i=1; i <= 10; i++) {
+            let svar = 3*i;
+            let txtStykke = `3 * ${i} = ${svar}`;
+            txt += `<p>${txtStykke}</p>`;
+        }
+
+        // TODO: utvid med 4- og 5-gangen
+        txt += "<h2>4-gangen</h2>";
+
+        for (TODO;TODO;TODO) {
+            TODO;
+            TODO;
+            TODO;
+        }
+
+        // TODO: utvid med 4- og 5-gangen
+        txt += "<h2>5-gangen</h2>";
+
+        for (TODO;TODO;TODO) {
+            TODO;
+            TODO;
+            TODO;
+        }
+
+        innhold.innerHTML = txt;
+    </script>
+
+</body>
+</html>

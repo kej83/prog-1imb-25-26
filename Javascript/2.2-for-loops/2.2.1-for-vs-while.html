@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Telle til 10</h1>
+    <p></p>
+
+    <script>
+        let txt = "Telle til 10: ";
+        // while-løsning
+        // let tall = 1;
+        // while (tall < 11) {
+        //     txt += `${tall}, `;
+        //     tall++;
+        // }
+        // for-løsning
+        for (let tall = 1; tall < 11; tall++) {
+            txt += `${tall}, `;
+        }
+
+
+        document.querySelector("p").textContent = txt;
+    </script>
+</body>
+</html>
