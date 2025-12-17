@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+//         Lag en variabel `poeng` (0–100).
+
+// Skriv ut karakter basert på poeng:
+
+// * 90–100 → `"Karakter 6"`
+// * 75–89 → `"Karakter 5"`
+// * 60–74 → `"Karakter 4"`
+// * Under 60 → `"Ikke bestått"`
+        let poeng = 101;
+        // 90 <= poeng <= 100
+        // if(90 <= poeng && poeng <= 100) // ok
+        let txt;
+        if(poeng >= 90) {
+            txt = "Karakter 6"
+        } else if (poeng >= 75) {
+            txt = "Karakter 5"  
+        } else if (poeng >= 60) {
+            txt = "Karakter 4" 
+        } else {
+            txt = "Ikke bestått" 
+        }
+
+        document.querySelector("p").textContent = txt;
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+//         Bruk en `for`-løkke som:
+
+// * Skriver ut **alle tall fra 1 til 10**
+// * Hvis tallet er **partall**, skriv `"X er et partall"`
+// * Hvis ikke, skriv `"X er et oddetall"`
+        let txt = "";
+        
+        for(let i = 1; i <= 10; i++) {
+            // Hvis tallet delt på 2 gir 0 i rest, så er det partall
+            // 1 % 2 gir 1
+            // 2 % 2 gir 0
+            // 3 % 2 gir 1
+            // 4 % 2 gir 0
+            // 5 % 2 gir 1
+
+            // 3 % 3 = 0
+            // 4 % 3 = 1
+            // 5 % 3 = 2
+            // 6 % 3 = 0
+            // 7 % 3 = 1
+            // 8 % 3 = 2
+            // 9 % 3 = 0
+            if (i % 2 === 0) {
+                txt += i + ", partall. <br>";
+            } else {
+                txt += i + ", oddetall. <br>";
+            }
+            
+        }
+
+        document.querySelector("p").innerHTML = txt;
+    </script>
+</body>
+</html>

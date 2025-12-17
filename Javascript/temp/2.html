@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Lag to variabler:
+
+```js
+let brukernavn = "admin";
+let passord = "1234";
+```
+
+Sjekk:
+
+* Hvis brukernavn er `"admin"` **OG** passord er `"1234"`, skriv `"Innlogging OK"`
+* Ellers skriv `"Feil brukernavn eller passord"` -->
+
+<h1>Login</h1>
+
+<label for="inpBrukernavn">Brukernavn:</label> 
+<input type="text" id="inpBrukernavn">
+<br>
+<label for="inpBrukernavn">Passord:</label>
+<input type="password" id="inpPassord">
+<br>
+<button onclick="loggInn()">Logg inn</button>
+
+<p></p>
+
+<script>
+    function loggInn() {
+        let riktigBrukernavn = "admin";
+        let riktigPassord = "1234";
+        
+        let brukernavn = document.getElementById("inpBrukernavn").value; 
+        let passord = document.getElementById("inpPassord").value; 
+
+        if (brukernavn == riktigBrukernavn && passord == riktigPassord) {
+            document.querySelector("p").textContent = "Du er logget inn!";
+        } else {
+            document.querySelector("p").textContent = "Feil bruker/pass!";
+        }
+    }
+</script>
+</body>
+</html>
