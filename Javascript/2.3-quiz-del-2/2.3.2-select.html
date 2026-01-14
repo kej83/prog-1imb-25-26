@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TODO: Legg til 2 spørsmål med SELECT!
+     VIKTIG: IKKE kopier, men skriv selv.-->
+    <h1>Vanskelige spørsmål</h1>
+    <p>Hvilket kjønn er sterkest?</p>
+    <select id="selSpm1">
+        <option value="">Vennligst velg et kjønn</option>
+        <option value="menn">menn</option>
+        <option value="kvinner">kvinner</option>
+    </select>
+
+    <p>Hvilket kjønn tiltrekker det motsatte kjønn primært ved fysisk utseende?</p>
+    <select id="selSpm2">
+        <option value="">Vennligst velg et kjønn</option>
+        <option value="menn">menn</option>
+        <option value="kvinner">kvinner</option>
+    </select>
+
+    <br>
+    <button onclick="sjekkSvar()">Sjekk svar</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function sjekkSvar(){
+            let fasit1 = "menn";
+            let fasit2 = "kvinner";
+            let poeng = 0;
+
+            let svar1 = document.getElementById("selSpm1").value;
+            let svar2 = document.getElementById("selSpm2").value;
+
+            if (svar1 === fasit1) {
+                poeng++;
+            }
+            if (svar2 === fasit2) {
+                poeng++;
+            }
+
+            document.getElementById("txtUt").textContent = `Du fikk ${poeng} av 2 mulige.`;
+
+
+        }
+    </script>
+
+</body>
+</html>
