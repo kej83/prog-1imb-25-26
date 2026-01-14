@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TODO: Legg til 2 spørsmål til på samme måte. -->
+    <h1>Geografi-quiz</h1>
+
+    <p>1. Hva er Norges lengste elv?</p>
+    <input type="text" id="inpSpm1">
+
+    <p>2. Hva heter Norges nordligste by?</p>
+    <input type="text" id="inpSpm2">
+
+    <button onclick="sjekkSvar()">Sjekk svar</button>
+
+    <p id="txtUt"></p>
+
+    <script>
+        function sjekkSvar(){
+            let fasit1 = "Glomma";
+            let fasit2 = "Hammerfest";
+            let poeng = 0;
+            // Lese inn svar
+            let brukersvar1 = document.getElementById("inpSpm1").value;
+            let brukersvar2 = document.getElementById("inpSpm2").value;
+
+            // Sjekk svar1
+            if (brukersvar1 == fasit1) {
+                poeng++;  // poeng = poeng + 1
+            }
+            // Sjekk svar2
+            if (brukersvar2 == fasit2) {
+                poeng++;
+            }
+
+            // lage og vise tekst
+            let txt = `Du fikk ${poeng} av 2 poeng.`;
+            document.getElementById("txtUt").textContent = txt;
+
+        }
+    </script>
+</body>
+</html>

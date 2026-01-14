@@ -4,7 +4,7 @@
 ```sql
 DROP TABLE IF EXISTS biler;
 CREATE TABLE biler (
-	id INT,
+	id SERIAL PRIMARY KEY,
 	merke TEXT,
 	modell TEXT,
 	pris NUMERIC(8, 2),
