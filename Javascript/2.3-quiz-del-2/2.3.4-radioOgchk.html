@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- TODO: legg til 1 checkbox og 1 radio spm. Tilbakemelding til hvert svar. Ikke poeng.-->
     <h1>Kombinasjon av radio og checkbox</h1>
@@ -12,7 +14,7 @@
     <input type="checkbox" id="chkSpm1"> Sant
 
     <p>Hvilken by er nest størst i Norge?</p>
-    
+
     <input type="radio" name="by" id="" value="Trondheim"> Trondheim <br>
     <input type="radio" name="by" id="" value="Bergen"> Bergen <br>
     <input type="radio" name="by" id="" value="Stavanger"> Stavanger <br>
@@ -25,9 +27,9 @@
         function sjekkSvar() {
             // svar1 gir true/false
             let svar1 = document.getElementById("chkSpm1").checked
-            
-let svar2 = document.querySelector('input[name="by"]:checked').value;
-            
+
+            let svar2 = document.querySelector('input[name="by"]:checked').value;
+
             document.getElementById("txtUt").textContent = svar2;
 
             // txt svar
@@ -35,7 +37,7 @@ let svar2 = document.querySelector('input[name="by"]:checked').value;
             // sjekk svar
             if (svar1 === true) {
                 txt += `<p>Riktig, kaldere temp gir mindre fuktighet.</p>`;
-            }else {
+            } else {
                 txt += `<p>Feil, kaldere temp gir faktisk mindre fuktighet.</p>`;
             }
             txt += `<h2>Spm 2</h2>`;
@@ -49,4 +51,5 @@ let svar2 = document.querySelector('input[name="by"]:checked').value;
         }
     </script>
 </body>
+
 </html>
