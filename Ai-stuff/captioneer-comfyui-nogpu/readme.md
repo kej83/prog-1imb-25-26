@@ -24,7 +24,7 @@ Du trenger:
 
 ## 1. Last ned ComfyUI (Windows)
 
-1. Last ned ComfyUI for Windows (portable/zip hvis dere bruker det).
+1. Last ned ComfyUI for Windows [Last ned comfy](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z)
 2. Pakk ut til f.eks:
 
 * `C:\ComfyUI\`
@@ -97,7 +97,7 @@ git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 
 ## 1. Installer Ollama
 
-1. Last ned og installer **Ollama for Windows**
+1. Last ned og installer **Ollama for Windows** her [https://ollama.com/](https://ollama.com/)
 2. Etter installasjon kjører den vanligvis som en lokal tjeneste.
 
 ## 2. Last ned en modell ved å kjøre første chat (viktig!)
