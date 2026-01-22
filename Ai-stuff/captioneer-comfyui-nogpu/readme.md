@@ -1,82 +1,258 @@
-# Comfyui image captioneer moondream2
+# Elevinstruks: Lag en lokal “Image Captioner” (ComfyUI + Ollama)
 
-Her er en steg-for-steg guide til hvordan dere installerer og setter opp ComfyUI på Windows-maskiner uten dedikert grafikkort (GPU). Siden PC-ene skal bruke prosessoren (CPU), velger vi **Moondream2**, som er en ekstremt lettvektig "Vision LLM" som er perfekt for bildebeskrivelser (captioning).
+## Mål
 
-## 1. Nedlasting og Installasjon
+Du skal lage et ComfyUI-workflow som:
 
-Siden skole-PC-er ofte har begrensninger, bruker vi den "portable" versjonen. Den krever ingen tradisjonell installasjon.
-
-1. Gå til [ComfyUI sin GitHub-side](https://github.com/comfyanonymous/ComfyUI/releases).
-2. Finn den øverste "Release"-posten og last ned filen som heter **`ComfyUI_windows_portable_nvidia_or_cpu.7z`**.
-3. Pakk ut filen (høyreklikk -> pakk ut alle) til et sted elevene har skrivetilgang, for eksempel på skrivebordet eller i en egen mappe i "Dokumenter".
+1. tar inn et bilde
+2. sender bildet til en lokal LLM (Ollama)
+3. viser en tekst-beskrivelse (caption) i ComfyUI
 
 ---
 
-## 2. Oppstart i CPU-modus
+## Før du begynner
 
-Fordi PC-ene ikke har GPU, må ComfyUI tvinges til å bruke prosessoren.
+Du trenger:
 
-1. Åpne mappen du nettopp pakket ut.
-2. Finn filen som heter **`run_cpu.bat`**.
-3. Dobbeltklikk på denne. Et svart vindu (terminal) vil åpne seg, og etter litt tid vil ComfyUI starte i nettleseren din (vanligvis på adressen `http://127.0.0.1:8188`).
-
----
-
-## 3. Installer ComfyUI Manager
-
-For å enkelt kunne legge til LLM-funksjonalitet, trenger vi "Manageren".
-
-1. Gå inn i mappen `ComfyUI_windows_portable > ComfyUI > custom_nodes`.
-2. Hold inne **Shift** og **høyreklikk** i et tomt område i mappen, og velg "Åpne i Terminal" (eller PowerShell).
-3. Skriv inn følgende kommando og trykk Enter:
-`git clone https://github.com/ltdrdata/ComfyUI-Manager.git`
-*(Hvis PC-en mangler Git, kan du laste ned Manageren som en ZIP-fil fra lenken over og pakke den ut i denne mappen manuelt).*
-4. **Start ComfyUI på nytt** ved å lukke terminalvinduet og kjøre `run_cpu.bat` igjen.
+* Windows PC (uten GPU går fint)
+* Internett (for nedlasting første gang)
+* Ca. 5 GB ledig plass (avhenger av modell)
 
 ---
 
-## 4. Legg til Moondream (Den lokale LLM-en)
+# Del 1 – Installer og start ComfyUI
 
-Nå skal vi installere nodene som lar oss bruke en liten språkmodell.
+## 1. Last ned ComfyUI (Windows)
 
-1. Klikk på den nye **Manager**-knappen i ComfyUI-menyen til høyre.
-2. Klikk på **Custom Nodes Manager**.
-3. Søk etter "Moondream" og klikk **Install** på `ComfyUI-moondream`.
-4. Når installasjonen er ferdig, klikk **Restart** (eller lukk og start `run_cpu.bat` på nytt).
+1. Last ned ComfyUI for Windows (portable/zip hvis dere bruker det).
+2. Pakk ut til f.eks:
 
----
+* `C:\ComfyUI\`
 
-## 5. Lag arbeidsflyten (Workflow)
+✅ **Sjekkpunkt:** Du har en mappe `C:\ComfyUI\` med `.bat`-filer inni.
 
-Nå skal vi bygge det "minimale eksempelet". Slett alt som ligger på skjermen fra før (velg alt med musa og trykk Delete).
+## 2. Start ComfyUI (CPU)
 
-### Steg for steg oppsett:
+1. Åpne `C:\ComfyUI\`
+2. Dobbeltklikk:
 
-1. **Høyreklikk på bakgrunnen** -> `Add Node` -> `image` -> `Load Image`. (Her laster elevene opp bildet sitt).
-2. **Høyreklikk** -> `Add Node` -> `moondream2` -> `Moondream Model Loader`. (Dette laster selve "hjernen").
-3. **Høyreklikk** -> `Add Node` -> `moondream2` -> `Moondream Caption`. (Dette er noden som gjør jobben).
-4. **Koble dem sammen:**
-* Dra en linje fra **IMAGE** på *Load Image* til **md2_image** på *Moondream Caption*.
-* Dra en linje fra **MODEL** på *Model Loader* til **model** på *Moondream Caption*.
+* `run_cpu.bat` (hvis den finnes)
+  eller
+* `run.bat` / `start.bat` (navn kan variere)
 
+3. Når terminalen viser at serveren kjører, åpne nettleser:
 
-5. **Vis resultatet:**
-* Høyreklikk -> `Add Node` -> `utils` -> `Show Text`. (Hvis denne ikke finnes, kan du dra en linje fra **STRING**-utgangen på Moondream Caption og slippe den i tomme lufta, velg så "Show Text").
+* `http://127.0.0.1:8188`
 
+✅ **Sjekkpunkt:** Du ser ComfyUI-griden (node-canvas).
 
+> Ikke lukk terminalvinduet mens du jobber. Det er “serveren”.
 
 ---
 
-## 6. Test arbeidsflyten
+# Del 2 – Installer ComfyUI Manager (viktig)
 
-1. Last opp et enkelt bilde i **Load Image**-noden.
-2. Trykk på den grønne knappen **Queue Prompt** i menyen til høyre.
-3. Følg med i terminalvinduet (det svarte vinduet). Første gang vil den laste ned modellen (ca. 1-2 GB). Dette tar noen minutter avhengig av nettverket.
-4. Når den er ferdig, vil beskrivelsen av bildet dukke opp i **Show Text**-noden!
+ComfyUI Manager lar dere installere noder fra UI med noen klikk.
 
-> **Tips til læreren:** Moondream2 krever kun ca. 4-8 GB RAM og fungerer overraskende raskt på moderne CPU-er. Hvis elevene vil ha mer detaljerte svar, kan de endre `length` i noden fra "short" til "long".
+## 1. Installer Git (hvis nødvendig)
 
-## Ekstra materiale
-[Guide til installasjon og bruk av ComfyUI](https://www.youtube.com/watch?v=ZQFqUdIYgdg)
+1. Åpne PowerShell
+2. Skriv:
 
-Denne videoen viser hvordan man setter opp ComfyUI på maskiner uten kraftig maskinvare, slik at dere får en visuell forståelse av prosessen.
+```powershell
+git --version
+```
+
+* Hvis du får en versjon → Git er ok.
+* Hvis du får feil → installer **Git for Windows** (standardvalg er fint), og test kommandoen igjen.
+
+## 2. Klon ComfyUI Manager
+
+1. Åpne PowerShell
+2. Gå til `custom_nodes`:
+
+```powershell
+cd C:\ComfyUI\custom_nodes
+```
+
+3. Klon Manager:
+
+```powershell
+git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+```
+
+✅ **Sjekkpunkt:** Mappa `C:\ComfyUI\custom_nodes\ComfyUI-Manager` finnes.
+
+## 3. Restart ComfyUI og sjekk at Manager dukker opp
+
+1. Lukk ComfyUI (Ctrl + C i terminalen)
+2. Start ComfyUI igjen (`run_cpu.bat`)
+3. Oppdater nettleseren
+
+✅ **Sjekkpunkt:** Du ser “Manager”/“ComfyUI Manager” i menyen (ofte oppe i UI).
+
+---
+
+# Del 3 – Installer Ollama (lokal LLM-server)
+
+## 1. Installer Ollama
+
+1. Last ned og installer **Ollama for Windows**
+2. Etter installasjon kjører den vanligvis som en lokal tjeneste.
+
+## 2. Last ned en modell ved å kjøre første chat (viktig!)
+
+1. Åpne PowerShell
+2. Kjør (samme som dere brukte):
+
+```powershell
+ollama run gemma3:4b
+```
+
+3. Når den starter, skriv en kort setning (f.eks. “hei”) → da lastes modellen ned.
+4. Skriv `exit` for å avslutte chatten.
+
+## 3. Sjekk at modellen er installert
+
+```powershell
+ollama list
+```
+
+✅ **Sjekkpunkt:** Du ser `gemma3:4b` i lista.
+
+> Hvis modellen blir for treg på noen PC-er: bytt til en mindre modell senere. Men start med samme for å følge oppskriften.
+
+---
+
+# Del 4 – Installer comfyui-ollama via Manager
+
+1. Åpne ComfyUI i nettleser: `http://127.0.0.1:8188`
+2. Åpne **Manager**
+3. Gå til **Install / Custom Nodes** (navn kan variere)
+4. Søk etter:
+
+* `comfyui-ollama`
+
+5. Klikk **Install**
+6. Når den er ferdig: **Restart ComfyUI** (Manager har ofte en “Restart”-knapp, ellers stopp/start fra terminal).
+
+✅ **Sjekkpunkt:** Du kan legge til noder som heter:
+
+* **Ollama Connectivity**
+* **Ollama Chat**
+
+---
+
+# Del 5 – Bygg workflowet (MWE)
+
+Du skal lage 4 noder og koble dem.
+
+## 1. Legg til noder
+
+Høyreklikk på canvas → Add Node / Search:
+
+* **Load Image**
+* **Ollama Connectivity**
+* **Ollama Chat**
+* **Preview as Text** (eller “Preview Text”)
+
+## 2. Koble nodene (akkurat slik)
+
+Koble disse:
+
+### A) Bilde inn til chat
+
+* `Load Image : IMAGE` → `Ollama Chat : images`
+
+### B) Tilkobling inn til chat
+
+* `Ollama Connectivity : connection` → `Ollama Chat : connectivity`
+
+### C) Resultat til visning
+
+* `Ollama Chat : result` → `Preview as Text : source`
+
+✅ **Sjekkpunkt:** Du har 3 kabler, og “Preview as Text” står klar til å vise tekst.
+
+---
+
+# Del 6 – Fyll inn riktige innstillinger
+
+## 1) Ollama Connectivity
+
+* **url:** `http://127.0.0.1:11434`
+* **model:** `gemma3:4b`
+* **keep_alive:** `5`
+* **keep_alive_unit:** `minutes`
+* Trykk **Reconnect** hvis den finnes.
+
+✅ **Sjekkpunkt:** Ingen feilmelding, og modellen kan velges.
+
+## 2) Ollama Chat (prompt)
+
+Skriv inn:
+
+**System (øverst):**
+
+> `You are an AI artist.`
+
+**User (nederst):**
+
+> `describe this image using natural language`
+
+(Valgfritt)
+
+* **think:** false
+* **format:** text
+
+---
+
+# Del 7 – Kjør og test
+
+1. I **Load Image**: velg et bilde
+2. Trykk **Queue Prompt**
+
+✅ **Resultat:** “Preview as Text” viser en tekst-beskrivelse av bildet.
+
+---
+
+# Feilsøking (når noe går galt)
+
+## 1) Ingen respons / “connection refused”
+
+* Sjekk at Ollama kjører:
+
+```powershell
+ollama list
+```
+
+* Sjekk URL i Connectivity: `http://127.0.0.1:11434`
+* Prøv **Reconnect** og restart ComfyUI.
+
+## 2) Modellen finnes ikke i ComfyUI
+
+* Kjør minst én gang:
+
+```powershell
+ollama run gemma3:4b
+```
+
+* Deretter: restart ComfyUI.
+
+## 3) Det går veldig tregt
+
+* Bruk mindre bilde (lavere oppløsning)
+* Bytt modell til en mindre (spør lærer / meg, så får dere forslag som passer CPU)
+
+## 4) Manager viser ikke “comfyui-ollama”
+
+* Oppdater node-lista i Manager
+* Sjekk at dere restartet ComfyUI etter installasjon
+
+---
+
+# Levering (hva dere skal vise)
+
+* Screenshot av workflowet (4 noder koblet)
+* Et eksempelbilde dere testet med
+* Teksten som kom ut i “Preview as Text”
