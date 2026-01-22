@@ -41,7 +41,7 @@ Nå skal vi installere nodene som lar oss bruke en liten språkmodell.
 
 1. Klikk på den nye **Manager**-knappen i ComfyUI-menyen til høyre.
 2. Klikk på **Custom Nodes Manager**.
-3. Søk etter "Moondream" og klikk **Install** på `ComfyUI-moondream2`.
+3. Søk etter "Moondream" og klikk **Install** på `ComfyUI-moondream`.
 4. Når installasjonen er ferdig, klikk **Restart** (eller lukk og start `run_cpu.bat` på nytt).
 
 ---
