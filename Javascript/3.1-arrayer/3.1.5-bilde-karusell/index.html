@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bilde karusell</h1>
+
+    <img width="100%" src="./bilder/skog1.jpg" alt="" id="imgSkog">
+
+    <script>
+
+        function byttBilde () {
+            indeks++;
+            if (indeks === 3) {
+                indeks = 0;  // restart
+            }
+            let fileURL = "./bilder/" + bilder[indeks]
+            document.getElementById("imgSkog").src = fileURL;
+        }
+
+        let indeks = 0;
+        let bilder = ["skog1.jpg", "skog2.jpg", "skog3.jpg"];
+
+        setInterval(byttBilde, 2000);
+
+
+    </script>
+</body>
+</html>
