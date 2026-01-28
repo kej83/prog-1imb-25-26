@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mine biler</h1>
+    <label for="inpBil">Oppgi bilmerke:</label>
+    <input type="text" id="inpBil">
+    <button onclick="visBiler()">Vis alle biler</button>
+    <button onclick="leggTilBil()">Legg til en bil</button>
+    <button >Fjern en bil</button>
+    <button>Vis antall biler</button>
+
+    <p id="txtUt"></p>
+
+    <script>
+        let biler = ["saab", "volvo", "bmw", "audi"];
+
+        function visBiler() {
+            TODO 
+            // Bruk løkke til å skrive ut alle bilene
+            let txt = "<h2>Mine biler</h2><ul>"
+            for (let i = 0; TODO; TODO) {
+                txt += `<li>${biler[i]}</li>`
+            }
+            txt += "</ul>";
+
+            document.getElementById("txtUt").innerHTML = txt;
+        }
+
+        function leggTilBil() {
+            let nyBil = document.getElementById("inpBil").value;
+            
+            // TODO: legg til bil i arrayet biler. gi tilbakemelding
+        }
+
+        // TODO: legg til de to siste funksjonene og få alt til å virke!
+    </script>
+
+</body>
+</html>
