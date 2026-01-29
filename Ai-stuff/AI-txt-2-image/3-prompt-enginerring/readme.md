@@ -1,4 +1,4 @@
-# Elevhandout: Bildeserie i ComfyUI – Photorealistic prompting (Z-Image Turbo)
+# Elevhandout: Bildeserie i ComfyUI – Image prompt engineering (Z-Image Turbo)
 
 ## Dette er det eneste dere skal gjøre i denne oppgaven
 Dere skal:
@@ -10,6 +10,11 @@ Dere skal:
 
 ## Produkt: Bildeserie (24 bilder)
 Lag en bildeserie med **én kjent person** (som modellen sannsynligvis kjenner til) og et tema dere velger selv.
+
+### Eksempler på tema (eller finn på et tema selv):
+- “Donald Trump på tur i norsk natur”
+- “Barack Obama lærer å padle kano”
+- “Taylor Swift på roadtrip i Nord-Norge”
 
 **Krav:** Dere skal lage **4 bilder per element** (6 elementer) = **24 bilder totalt**.  
 I hver “serie på 4” skal dere:
