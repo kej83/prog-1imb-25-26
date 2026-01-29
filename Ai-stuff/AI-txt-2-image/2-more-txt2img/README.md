@@ -16,8 +16,7 @@ Lag **én Word-fil (.docx)** med:
 
 # Oppgave 1: Queue (vis at du kan kjøre kø)
 
-1. Bruk baseline.
-2. Trykk **Queue Prompt** 3 ganger på rad.
+- Trykk **Queue Prompt** 3 ganger på rad. Sjekk at seed står på random, slik at bildene blir bittelitt ulike, selv om prompten er den samme.
 
 **I Word:** 1 skjermklipp som viser at du har flere jobber i kø.
 
