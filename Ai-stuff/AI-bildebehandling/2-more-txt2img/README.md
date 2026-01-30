@@ -1,3 +1,26 @@
+# Kom igang med bildegenerering
+
+## Google colab
+
+### Oppsett
+1. Gå til [google colab](https://colab.google/)
+2. Lag bruker eller sign inn med google.
+3. Gå til [ngrok](https://ngrok.com/)
+4. Lag bruker på ngrok og logg inn.
+5. Finn din API-key på ngrok og ta vare på den.
+
+### Colab notebook
+1. Gå i file -> upload notebook.
+3. Velg notebook `ngrok_ComfyUI....ipynb` i google colab.
+4. Velg runtime øverst til høyre, og velg `T4 GPU`.
+5. Kjør en og en celle.
+6. I cella med ngrok, bytt ut KEY med din egen API-key.
+7. Når alle cellene er kjørt, åpner du til slutt URLen du får fra cella til ngrok. (URLen inneholder `ngrok`)
+
+### Bruke workflow
+1. Last ned `z_image_turbo_example.json` og dra denne oppå COMFYUI.
+2. Endre prompt og trykk `RUN`.
+
 # ComfyUI Txt2Img Lab (Z-Image Turbo) — Workflow-basert
 
 Når comfyui kjører, drag and drop `z_image_turbo_example.json` på comfyui.
