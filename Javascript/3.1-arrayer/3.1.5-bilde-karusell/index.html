@@ -15,7 +15,7 @@
 
         function byttBilde () {
             indeks++;
-            if (indeks === 3) {
+            if (indeks === bilder.length) {
                 indeks = 0;  // restart
             }
             let fileURL = "./bilder/" + bilder[indeks]
@@ -25,7 +25,7 @@
         let indeks = 0;
         let bilder = ["skog1.jpg", "skog2.jpg", "skog3.jpg"];
 
-        setInterval(byttBilde, 2000);
+        setInterval(byttBilde, 2000);  // 2000ms = 2 sek
 
 
     </script>
