@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Klasseliste</h1>
+    <button onclick="visAlle()">Vis alle</button>
+    <div id="txtUt"></div>
+
+    <script>
+        function visAlle(){
+            let htmlUt = "<ul>";
+            for (let elev of klasseliste) {
+                htmlUt += `<li>${elev}</li>`;
+            }
+            htmlUt += "</ul>";
+            document.getElementById("txtUt").innerHTML = htmlUt;
+            
+        }
+        
+        let klasseliste = ["jens", "per", "ea"];
+        visAlle();  // Vis klasselisten med en gang
+
+    </script>
+</body>
+</html>

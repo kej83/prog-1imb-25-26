@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bildekarusell</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bilde karusell</h1>
+
+  <div style="max-width: 900px; margin: 0 auto;">
+    <img width="100%" src="./bilder/skog1.jpg" alt="" id="imgSkog">
+
+    <div class="controls">
+      <button id="btnForrige">Forrige</button>
+      <button id="btnPlayPause">Play</button>
+      <button id="btnNeste">Neste</button>
+    </div>
+  </div>
+
+  <script>
+    let indeks = 0;
+    let bilder = ["skog1.jpg", "skog2.jpg", "skog3.jpg"];
+
+    let imgSkog = document.getElementById("imgSkog");
+    let btnForrige = document.getElementById("btnForrige");
+    let btnPlayPause = document.getElementById("btnPlayPause");
+    let btnNeste = document.getElementById("btnNeste");
+
+    // Lyd: bruk innebygd Audio
+    let audio = new Audio("lyder/bgmusic.mp3");
+    audio.loop = true;
+
+    function visBilde() {
+      imgSkog.src = "./bilder/" + bilder[indeks];
+    }
+
+    function nesteBilde() {
+      indeks++;
+      if (indeks === bilder.length) indeks = 0;
+      visBilde();
+    }
+
+    function forrigeBilde() {
+      indeks--;
+      if (indeks < 0) indeks = bilder.length - 1;
+      visBilde();
+    }
+
+    // Play/pause for karusell
+    let spiller = false;     // starter stoppet (bedre pga. autoplay-regler)
+    let intervallId = null;
+
+    function start() {
+      intervallId = setInterval(nesteBilde, 2000);
+      spiller = true;
+      btnPlayPause.textContent = "Pause";
+
+      // prøv å starte lyd (må ofte skje etter klikk)
+      audio.play();
+    }
+
+    function stopp() {
+      clearInterval(intervallId);
+      intervallId = null;
+      spiller = false;
+      btnPlayPause.textContent = "Play";
+      audio.pause();
+    }
+
+    function togglePlayPause() {
+      if (spiller) stopp();
+      else start();
+    }
+
+    // Knapper
+    btnNeste.addEventListener("click", nesteBilde);
+    btnForrige.addEventListener("click", forrigeBilde);
+    btnPlayPause.addEventListener("click", togglePlayPause);
+
+    // Vis første bilde (det ligger allerede i HTML, men fint å være tydelig)
+    visBilde();
+  </script>
+</body>
+</html>
