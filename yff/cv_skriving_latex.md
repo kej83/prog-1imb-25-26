@@ -1,7 +1,7 @@
 # 💼 CV-oppgave: Lag din egen profesjonelle CV i Overleaf
 
 **Informasjonsteknologi og medieproduksjon VG1**
-📅 **Innlevering:** *Onsdag 16. oktober (i dag)* på **Teams** som **PDF**
+📅 **Innlevering:** på **Teams** som **PDF**
 
 ---
 
