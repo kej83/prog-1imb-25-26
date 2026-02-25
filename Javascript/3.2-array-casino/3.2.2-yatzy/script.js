@@ -7,6 +7,23 @@ function lag6Terninger() {
     return tempKast;
 }
 
+function treLike() {
+    let kastene = lag6Terninger();
+    // Sjekk tre like for enere, toere, ... 6-ere
+    for(let i = 1; i <= 6; i++) {
+        let antall = 0;
+        for (let kast of kastene) {
+            if (kast === i) {
+                antall++;
+            }
+        }
+        if (antall >= 3) {
+            txtUt.textContent = `${kastene}. 3 like! Hurra!"`;
+            return;  // avslutt funksjonen
+        }
+    }
+    txtUt.textContent = `${kastene}. IKKE 3 like, dessverre.`;
+}
 function enere() {
     // Kast 6 terninger
     let kastene = lag6Terninger();
@@ -23,8 +40,9 @@ function enere() {
 }
 
 let btnEnere = document.getElementById("btnEnere");
+let btnTreLike = document.getElementById("btnTreLike");
 let txtUt = document.getElementById("txtUt");
 
 // Events
 btnEnere.addEventListener("click", enere);
-
+btnTreLike.addEventListener("click", treLike);
