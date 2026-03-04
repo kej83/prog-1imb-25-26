@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Oppgaver:
+     1. Endre slik at hvis kortet er høyere enn 10 så blir det game over. Skriv også ut hvilket kort du trakk i game over screeen.
+     2. Endre slik at du trekker to kort, og du vinner hvis begge er like!
+     3. Trekk fortsatt to kort, men du vinner hvis begge kortene er honnør (dvs. 11 eller høyere).
+      -->
+    <h1>Trekk et ess for å vinne</h1>
+    <button onclick="trekkKort()">Trekk kort</button>
+    <p></p>
+
+    <script>
+        function lagNyStokkeKortstokk() {
+            let kortstokk = [];
+            // Gjenta 4 ganger
+            for (let j = 0; j < 4; j++) {
+                // Fyll med kortene 2-14
+                for (let i = 2; i <= 14; i++) {
+                    kortstokk.push(i);
+                }
+            }
+
+            // Stokke kortstokken
+            // Stokke kortstokken
+            let stokketKort = [];
+
+            for (let i = 0; i < 52; i++) {
+                // Vi trekker tilfeldig kort og lager en stokket kortstokk
+                let index = Math.floor(Math.random() * kortstokk.length);
+                let nyttKort = kortstokk[index];
+                stokketKort.push(nyttKort);
+
+                // Før vi trekker et tilfeldig kort til, så må kortet vi trakk fjernes
+                kortstokk.splice(index, 1);
+            }
+            return stokketKort;
+        }
+
+        function gameOver() {
+            document.body.innerHTML = "<h1>Game Over. Du trakk ess og vant!</h1>";
+            document.body.style.backgroundColor = "red";
+        }
+
+        function trekkKort() {
+            let nyttKort = kortene.pop();
+            if (nyttKort === 14) {
+                gameOver();
+                return;  // avslutt trekkKort-funksjonen
+            }
+            let txt = `Du trakk en ${nyttKort}-er. Det er ${kortene.length} kort igjen.`;
+            document.querySelector("p").textContent = txt;
+        }
+        let kortene = lagNyStokkeKortstokk();
+    
+    </script>
+
+</body>
+
+</html>

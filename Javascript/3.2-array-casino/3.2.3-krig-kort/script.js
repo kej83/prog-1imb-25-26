@@ -38,7 +38,7 @@ function trekk() {
     } else {
         txt += "uavgjort";
     }
-        txt += `<br>Spiller: ${spillerPoeng} poeng. CPU: ${cpuPoeng}`;
+        txt += `<br>POENG: Spiller: ${spillerPoeng}. CPU: ${cpuPoeng}`;
         txtUt.innerHTML = txt;
     if (kort.length < 2) {
         gameOver();
