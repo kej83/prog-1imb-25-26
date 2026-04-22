@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enkel nettside</h1>
+    
+    <div id="innhold">
+            </div>
+
+    <script>
+        let innhold = document.getElementById("innhold");
+
+        // lage en h2, inni innhold-containeren
+        let overskrift = document.createElement("h2");
+        overskrift.textContent = "Overskrift h2";
+        innhold.appendChild(overskrift);
+
+        // Opg: Lage en p med teksten "Kong Harald", inni innhold-containeren.
+        let tekst = document.createElement("p");
+        tekst.textContent = "Kong Harald";
+        innhold.appendChild(tekst);
+
+        // Opg: gå til picsum og finn bildelenke. Så lager vi img
+        let bilde = document.createElement("img");
+        bilde.src = "https://picsum.photos/200";
+        innhold.appendChild(bilde);
+
+
+    </script>
+</body>
+</html>
