@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- TODO: gå til https://picsum.photos/ og les. Finn ut hvordan du kan få 20 ulike bilder hver gang. -->
+
+<body id="kropp">
+    <script>
+        let kropp = document.getElementById("kropp");
+
+        // 20 bilder
+
+
+        for (let i = 0; i < 20; i++) {
+            let bilde = document.createElement("img");
+            bilde.src = "https://picsum.photos/200/300";
+            kropp.appendChild(bilde);
+        }
+
+    </script>
+</body>
+
+</html>

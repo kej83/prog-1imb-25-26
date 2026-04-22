@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Legge til liste</h1>
+    <div id="innhold"></div>
+
+    <script>
+        let innhold = document.getElementById("innhold");
+
+        let liste = document.createElement("ul");
+        let listepunkt1 = document.createElement("li");
+        let listepunkt2 = document.createElement("li");
+
+        listepunkt1.textContent = "Oslo";
+        listepunkt2.textContent = "Bergen";
+
+        liste.appendChild(listepunkt1);
+        liste.appendChild(listepunkt2);
+
+        innhold.appendChild(liste);
+
+    </script>
+</body>
+</html>
