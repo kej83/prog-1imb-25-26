@@ -1,0 +1,48 @@
+# =============================================================================
+# ACE-Step Premium - Modified requirements for Google Colab (Tesla T4)
+# =============================================================================
+# Tesla T4 = compute capability 7.5 (Turing) with 16 GB VRAM.
+# Colab ships CUDA 12.x drivers, NOT CUDA 13.1, so we CANNOT use the prebuilt
+# flash_attn / xformers / sageattention wheels listed in the original
+# requirements_ACE_Step.txt (those are compiled against torch 2.9.1 + cu13.1).
+#
+# What we do instead:
+#   * Keep Colab's stock PyTorch (already CUDA-matched).
+#   * Skip flash_attn (Turing is poorly supported by v2 wheels).
+#   * Skip SageAttention 2 (requires SM >= 8.0, T4 is SM 7.5).
+#   * Skip the custom xformers cu13.1 wheel; PyTorch SDP attention is used.
+# The app falls back to PyTorch's built-in scaled-dot-product attention.
+# =============================================================================
+
+huggingface-hub
+hf_xet
+requests>=2.31.0
+gradio==6.10.0
+
+# Core dependencies
+transformers>=4.51.0,<4.58.0
+diffusers
+matplotlib>=3.7.5
+scipy>=1.10.1
+pytorch_wavelets
+PyWavelets
+soundfile>=0.13.1
+loguru>=0.7.3
+einops>=0.8.1
+accelerate>=1.12.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+numba>=0.63.1
+vector-quantize-pytorch>=1.27.15
+torchao==0.15.0
+toml
+modelscope
+
+# Training dependencies (LoRA/LoKr)
+peft>=0.18.0
+lycoris-lora
+lightning>=2.0.0
+tensorboard>=2.0.0
+
+xxhash
+safetensors==0.7.0
