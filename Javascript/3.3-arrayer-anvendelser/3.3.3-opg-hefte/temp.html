@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Gangetabell</h1>
+
+    <label for="inpTall">Oppgi et tall:</label>
+    <input type="number" id="inpTall">
+
+    <button onclick="visTabell()">Vis tabell</button>
+    <div id="container"></div>
+
+    <script>
+        function visTabell() {
+            // 1. Les inn tall
+            let tall = document.getElementById("inpTall").value;
+            // 2. Variabel for container
+            let container = document.getElementById("container");
+            // 3. Lag tabell
+            for (let i = 1; i <= 10; i++) {
+                let svar = i * tall;
+                let p = document.createElement("p");
+                p.textContent = `${tall} * ${i} = ${svar}`;
+                container.appendChild(p);
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mine Favorittspill</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOPBANNER -->
+  <header>
+    <div class="header-inner">
+      <div class="pixel-icon">🎮</div>
+      <h1>Mine Favorittspill</h1>
+      <p class="subtitle">Din personlige spilliste</p>
+    </div>
+    <div class="scanline"></div>
+  </header>
+
+  <main>
+
+    <!-- LEGG TIL SPILL -->
+    <section class="card" id="legg-til-seksjon">
+      <h2><span class="tag-num">01</span> Legg til spill</h2>
+      <div class="input-row">
+        <input
+          type="text"
+          id="nytt-spill-input"
+          placeholder="Skriv inn spillnavn..."
+          maxlength="60"
+        />
+        <button id="legg-til-knapp" onclick="leggTilSpill()">
+          + Legg til
+        </button>
+      </div>
+      <p id="tilbakemelding-legg-til" class="feedback"></p>
+    </section>
+
+    <!-- SØK -->
+    <section class="card" id="sok-seksjon">
+      <h2><span class="tag-num">02</span> Søk etter spill</h2>
+      <div class="input-row">
+        <input
+          type="text"
+          id="sok-input"
+          placeholder="Søk i spillisten..."
+          oninput="sokEtterSpill()"
+        />
+        <button id="nullstill-sok-knapp" onclick="nullstillSok()">
+          ✕ Nullstill
+        </button>
+      </div>
+      <p id="sokresultat-info" class="feedback"></p>
+    </section>
+
+    <!-- SPILLISTE -->
+    <section class="card" id="liste-seksjon">
+      <div class="liste-header">
+        <h2><span class="tag-num">03</span> Spillisten din</h2>
+        <div class="liste-knapper">
+          <button onclick="visAllSpill()" class="secondary-btn">Vis alle</button>
+          <button onclick="sorterListe()" class="secondary-btn">A–Å sorter</button>
+        </div>
+      </div>
+      <p id="liste-info" class="feedback"></p>
+      <ul id="spilliste">
+        <!-- Spill blir lagt til her av JavaScript -->
+      </ul>
+      <p id="tom-liste-melding" class="empty-msg">🕹️ Ingen spill å vise ennå.</p>
+    </section>
+
+    <!-- STATISTIKK -->
+    <section class="card" id="statistikk-seksjon">
+      <h2><span class="tag-num">04</span> Statistikk</h2>
+      <div class="stat-grid">
+        <div class="stat-boks">
+          <span class="stat-tall" id="antall-spill">0</span>
+          <span class="stat-label">Antall spill</span>
+        </div>
+        <div class="stat-boks">
+          <span class="stat-tall" id="lengste-navn">–</span>
+          <span class="stat-label">Lengste navn</span>
+        </div>
+        <div class="stat-boks">
+          <span class="stat-tall" id="siste-lagt-til">–</span>
+          <span class="stat-label">Sist lagt til</span>
+        </div>
+      </div>
+      <button onclick="oppdaterStatistikk()" class="secondary-btn" style="margin-top:1rem">Oppdater statistikk</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Laget i JavaScript-faget &bull; <span id="ar"></span></p>
+  </footer>
+
+  <script src="spill.js"></script>
+</body>
+</html>
